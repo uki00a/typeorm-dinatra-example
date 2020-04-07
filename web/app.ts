@@ -10,7 +10,7 @@ export function createApp(connection: typeorm.Connection): dinatra.App {
   } = dinatra;
 
   return app(
-    get("/posts", createHandler(posts.getPost, connection)),
+    get("/posts/:id", createHandler(posts.getPost, connection)),
     post("/posts", createHandler(posts.createPost, connection))
   );
 }
